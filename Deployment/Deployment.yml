@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: portfolio-app
-        image: docker.io/akhiltofficial/saas:portfolio
+        image: docker.io/akhiltofficial/saas:portfolio1
         imagePullPolicy: Always
         ports:
         - containerPort: 80
