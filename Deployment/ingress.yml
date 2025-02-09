@@ -24,4 +24,4 @@ spec:
   tls:
     - hosts:
         -  arun.testdemoapplication.shop
-      secretName: argocd-tls
+      secretName: portfolio-tls
