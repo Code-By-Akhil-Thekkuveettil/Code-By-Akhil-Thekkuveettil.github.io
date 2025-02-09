@@ -20,7 +20,7 @@ spec:
               service:
                 name: portfolio-app-service
                 port:
-                  number: 80
+                  number: 443
   tls:
     - hosts:
         -  arun.testdemoapplication.shop
