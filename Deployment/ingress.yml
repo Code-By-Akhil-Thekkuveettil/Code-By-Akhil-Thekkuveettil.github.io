@@ -1,21 +1,27 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: portfolio-ingres
-  namespace: portfolio
+  name: argocd-server-ingress
+  namespace: argocd
   annotations:
-   # Use Traefik as the Ingress controller
-    traefik.enable: "true" # Ensure Traefik picks up this Ingress
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+    nginx.ingress.kubernetes.io/proxy-buffering: "off"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  ingressClassName: traefik
+  ingressClassName: nginx
   rules:
-  - host: arun.testdemoapplication.shop # Replace with your desired hostname
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: portfolio-app-service
-            port:
-              number: 80
+    - host:  arun.testdemoapplication.shop
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        -  arun.testdemoapplication.shop
+      secretName: argocd-tls
