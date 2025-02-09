@@ -4,7 +4,7 @@ metadata:
   name: portfolio-ingress
   namespace: portfolio
   annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     nginx.ingress.kubernetes.io/proxy-body-size: "100m"
     nginx.ingress.kubernetes.io/proxy-buffering: "off"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
