@@ -18,7 +18,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: argocd-server
+                name: portfolio-app-service
                 port:
                   number: 443
   tls:
