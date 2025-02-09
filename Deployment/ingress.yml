@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: akhil.local.com # Replace with your desired hostname
+  - host: arun.testdemoapplication.shop # Replace with your desired hostname
     http:
       paths:
       - path: /
